@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pong Arcade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-shell">
+    <div class="topbar">
+      <h1 class="title">Pong Arcade</h1>
+      <div class="toolbar">
+        <button class="btn secondary" id="soundToggle">Sound: On</button>
+        <button class="btn secondary" id="resetBtn">Reset</button>
+      </div>
+    </div>
+
+    <div class="scoreboard">
+      <div class="score" id="leftScore">0</div>
+      <div class="score-sep">:</div>
+      <div class="score" id="rightScore">0</div>
+    </div>
+
+    <div class="canvas-wrap">
+      <canvas id="gameCanvas" width="800" height="500" tabindex="0"></canvas>
+
+      <div class="overlay" id="menuOverlay">
+        <div class="panel">
+          <h2>Start Game</h2>
+          <p>Move with your mouse or use the Up / Down arrow keys. First to 10 wins.</p>
+
+          <div class="difficulty-row" id="difficultyRow">
+            <button class="difficulty" data-level="easy">Easy</button>
+            <button class="difficulty active" data-level="medium">Medium</button>
+            <button class="difficulty" data-level="hard">Hard</button>
+          </div>
+
+          <div class="panel-actions">
+            <button class="btn" id="startBtn">Start Match</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlay hidden" id="pauseOverlay">
+        <div class="panel">
+          <h2>Paused</h2>
+          <p>Press Space or use the button below to continue.</p>
+          <div class="panel-actions">
+            <button class="btn" id="resumeBtn">Resume</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlay hidden" id="endOverlay">
+        <div class="panel">
+          <h2 id="winnerText">Player Wins</h2>
+          <p id="endMessage">Press the button below to start a new match.</p>
+          <div class="panel-actions">
+            <button class="btn" id="newMatchBtn">New Match</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      Move mouse over the game area or use Up / Down arrow keys to move the left paddle.<br>
+      Press Space to pause/resume.
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
